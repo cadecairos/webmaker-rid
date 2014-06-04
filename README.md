@@ -11,3 +11,24 @@ Cookie-js code pulled from: https://github.com/cadecairos/cookie-js
 RID related code pulled from https://github.com/mozilla/webmaker-auth-client
 
 Note: This script **is not required** if the page has the [webmaker-auth-client](https://github.com/mozilla/webmaker-auth-client) loaded!
+
+### Examples:
+
+#### Load via script tag
+
+```
+<script src="{{link_to_webmaker_rid_script}}"></script>
+```
+
+#### Inject script tag via JavaScript
+
+```
+// create element
+var ridScript = document.createElement("script");
+
+// set src attribute
+ridScript.setAttribute("src", "https://link.to.script.net/webmaker-rid.js");
+
+// append to body
+document.body.appendChild(ridScript);
+```
