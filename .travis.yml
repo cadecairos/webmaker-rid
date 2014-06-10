@@ -1,3 +1,4 @@
+script: echo "Tests? Where we're going, we don't need tests."
 deploy:
   provider: s3
   access_key_id: AKIAJWIJ3CC6V7KIDMQA
