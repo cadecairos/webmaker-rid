@@ -1,0 +1,10 @@
+deploy:
+  provider: s3
+  access_key_id: AKIAJWIJ3CC6V7KIDMQA
+  secret_access_key:
+    secure: JLp2BadXEx/r3/l3veuGzIxFYmlf+8vrLPZGsEceZQN7Oybw5ioFIJcdL8OH3vaLcSxjVT4FK4sl8dDxoiWhXFkqerc7BuE3BJXlhfHLB2IP1CO2UDFLQLsbW2DZ4obGbuc2SBNM/oG/GE5bisF6LHAzl3AUWpjIBuGTHiX/jhY=
+  bucket: stuff.webmaker.org
+  upload-dir: webmaker-rid
+  on:
+    repo: mozilla/webmaker-rid
+    branch: master
