@@ -1,34 +1,29 @@
-WEBMAKER-RID
-============
+# Webmaker RID
 
-A small, standalone JavaScript snippet for setting a Webmaker Referrer ID super-cookie.
+A small, standalone JavaScript snippet for setting a Webmaker Referrer ID (RID).
 
 Read more about RIDs [on the wiki](https://wiki.mozilla.org/Webmaker/Maker_Party/referrer_api).
 
-Just have the script load on any page under the `*.webmaker.org` domain and it will do the rest for you!
+Just have this script load on any page under the `*.webmaker.org` domain and it will do the rest for you!
 
 Cookie-js code pulled from: https://github.com/cadecairos/cookie-js
 RID related code pulled from https://github.com/mozilla/webmaker-auth-client
 
 Note: This script **is not required** if the page has the [webmaker-auth-client](https://github.com/mozilla/webmaker-auth-client) loaded!
 
-### Examples:
+## Examples
 
-#### Load via script tag
+### Insert into HTML
 
+```html
+<script src="https://stuff.webmaker.org/webmaker-rid/webmaker-rid.js" async></script>
 ```
-<script src="{{link_to_webmaker_rid_script}}"></script>
-```
 
-#### Inject script tag via JavaScript
+### Insert into JavaScript
 
-```
-// create element
+```js
 var ridScript = document.createElement("script");
-
-// set src attribute
-ridScript.setAttribute("src", "https://link.to.script.net/webmaker-rid.js");
-
-// append to body
+ridScript.async = true;
+ridScript.src = "https://stuff.webmaker.org/webmaker-rid/webmaker-rid.js";
 document.body.appendChild(ridScript);
 ```
