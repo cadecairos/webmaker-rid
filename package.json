@@ -1,0 +1,23 @@
+{
+  "name": "webmaker-rid",
+  "version": "0.0.0",
+  "description": "Webmaker Referrer ID script",
+  "scripts": {
+    "build": "uglifyjs webmaker-rid.js -c -m --output build/webmaker-rid.js --source-map build/webmaker-rid.js.map --source-map-url webmaker-rid.js.map",
+    "clean": "rm -rf build && mkdir build",
+    "test": "npm run clean && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mozilla/webmaker-rid.git"
+  },
+  "author": "Mozilla Webmaker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mozilla/webmaker-rid/issues"
+  },
+  "homepage": "https://github.com/mozilla/webmaker-rid",
+  "devDependencies": {
+    "uglify-js": "^2.4.14"
+  }
+}
