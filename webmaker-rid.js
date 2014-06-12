@@ -58,21 +58,19 @@
   var decode = decodeURIComponent;
   // end of node-cookie code
 
-  document.addEventListener("DOMContentLoaded", function() {
-    var referralCookieSettings = {
-          domain: location.hostname.split('.').slice(-2).join('.'),
-          path: '/',
-          secure: location.protocol === 'https:',
-          expires: new Date((Date.now() + 60 * 1000 * 60 * 24 * 7))
-        },
-        refValue = /ref=(\w+)/.exec(window.location.search),
-        cookieRefValue = cookiejs.parse(document.cookie).webmakerReferral;
+  var referralCookieSettings = {
+        domain: location.hostname.split('.').slice(-2).join('.'),
+        path: '/',
+        secure: location.protocol === 'https:',
+        expires: new Date((Date.now() + 60 * 1000 * 60 * 24 * 7))
+      },
+      refValue = /ref=(\w+)/.exec(window.location.search),
+      cookieRefValue = cookiejs.parse(document.cookie).webmakerReferral;
 
-    if (refValue) {
-      refValue = refValue[1];
-      if (cookieRefValue !== refValue) {
-        document.cookie = cookiejs.serialize('webmakerReferral', refValue, referralCookieSettings);
-      }
+  if (refValue) {
+    refValue = refValue[1];
+    if (cookieRefValue !== refValue) {
+      document.cookie = cookiejs.serialize('webmakerReferral', refValue, referralCookieSettings);
     }
-  });
+  }
 }());
