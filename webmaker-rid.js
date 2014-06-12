@@ -7,7 +7,7 @@
       var enc = opt.encode || encode;
       var pairs = [name + '=' + enc(val)];
 
-      if (null != opt.maxAge) {
+      if (null !== opt.maxAge) {
         var maxAge = opt.maxAge - 0;
         if (isNaN(maxAge)) throw new Error('maxAge should be a Number');
         pairs.push('Max-Age=' + maxAge);
@@ -23,25 +23,25 @@
     },
     parse: function(str, opt) {
       opt = opt || {};
-      var obj = {}
+      var obj = {};
       var pairs = str.split(/; */);
       var dec = opt.decode || decode;
 
       pairs.forEach(function(pair) {
-        var eq_idx = pair.indexOf('=')
+        var eq_idx = pair.indexOf('=');
 
         if (eq_idx < 0) {
           return;
         }
 
-        var key = pair.substr(0, eq_idx).trim()
+        var key = pair.substr(0, eq_idx).trim();
         var val = pair.substr(++eq_idx, pair.length).trim();
 
         if ('"' == val[0]) {
           val = val.slice(1, -1);
         }
 
-        if (undefined == obj[key]) {
+        if (undefined === obj[key]) {
           try {
             obj[key] = dec(val);
           } catch (e) {
