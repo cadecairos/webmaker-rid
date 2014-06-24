@@ -64,7 +64,7 @@
         secure: location.protocol === 'https:',
         expires: new Date((Date.now() + 60 * 1000 * 60 * 24 * 7))
       },
-      refValue = /ref=(\w+)/.exec(window.location.search),
+      refValue = /ref=((?:\w|-)+)/.exec(window.location.search),
       cookieRefValue = cookiejs.parse(document.cookie).webmakerReferral;
 
   if (refValue) {
